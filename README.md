@@ -25,7 +25,7 @@ QuotAI is a menu-bar app (no Dock icon). On first launch it opens *Settings* and
 - **Make it yours** — your own orange/red warning thresholds, reorder providers by drag and drop, launch at login, keep the panel always on top, dial in its opacity. Light and dark modes follow the system.
 - **Nothing but official data, nothing but the Keychain** — see *Security and privacy* below.
 
-## What is actually available (verified 2026-09-24)
+## What is actually available
 
 | Connector | What QuotAI can show | How | Limits |
 |---|---|---|---|
