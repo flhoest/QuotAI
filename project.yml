@@ -1,0 +1,58 @@
+name: QuotAI
+options:
+  bundleIdPrefix: com.quotai
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    ARCHS: "arm64 x86_64"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "-"
+    DEVELOPMENT_TEAM: ""
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  QuotAI:
+    type: application
+    platform: macOS
+    sources: [QuotAI]
+    info:
+      path: QuotAI/Info.plist
+      properties:
+        CFBundleName: QuotAI
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en]
+        CFBundleDisplayName: QuotAI
+        CFBundleIconName: AppIcon
+        LSUIElement: true
+        LSMinimumSystemVersion: "14.0"
+        NSHumanReadableCopyright: "© 2026 Let's Talk About Tech"
+    entitlements:
+      path: QuotAI/QuotAI.entitlements
+      properties: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quotai.QuotAI
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  QuotAITests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [QuotAITests]
+    dependencies:
+      - target: QuotAI
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quotai.QuotAITests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  QuotAI:
+    build:
+      targets:
+        QuotAI: all
+    test:
+      targets: [QuotAITests]
